@@ -1,0 +1,129 @@
+.projContainer{
+    position: relative;
+    max-width: 40vw;
+    border: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: 6px 8px 0px rgba(0, 0, 0, 0.502);
+    z-index: 50;
+    background-color: white;
+    transition: all 750ms;
+    /* opacity: 0; */
+    /* animation: show 500ms linear; */
+    /* animation-timeline: view(5% auto); */
+
+}
+@keyframes show {
+    to{opacity: 1;}
+}
+.projContainer::before, .projContainer::after{
+    content: '';
+    position: absolute;
+    width: 12px;
+    aspect-ratio: 1;
+    border: solid;
+}
+.projContainer::before{
+    border-left: 0;
+    border-top: 0;
+    top: 0;
+    left: 0;
+    translate: -100% -100%;
+}
+.projContainer::after{
+    bottom: 0;
+    right: 0;
+    translate: 100% 100%;
+    border-right: 0;
+    border-bottom: 0;
+}
+.projImageContainer{
+    display: flex;
+    overflow: hidden;
+    /* position: relative; */
+}
+.projImageContainer img{
+    /* position: relative; */
+    max-width: 100%;
+    aspect-ratio:16/9;
+    border: solid;
+}
+.projDetailsContainer div{
+    margin: 8px 0px;
+}
+.projTitleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-block: 1.25rem!important;
+}
+.toggleArrow{
+    height: 100%;
+    aspect-ratio: 1;
+    text-align: center;
+    background-color: black;
+    box-shadow: 3px 6px 0px gray;
+    transition: all 250ms;
+}
+.toggleArrow img{
+    padding: 5px;
+    filter: invert();
+    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 350ms;
+}
+.toggleArrow:hover{
+    translate: 0px -2px;
+    box-shadow: 3px 8px 0px gray;
+}
+.toggleArrow:hover img{
+    transform: rotateZ(-45deg);
+}
+.projContainer:hover{
+    background-color: black;
+    color: white;
+}
+.projContainer:hover .toggleArrow{
+    background-color: white;
+}
+.projContainer:hover .toggleArrow>img{
+    filter: none;
+}
+.toggleArrow:active{
+    translate: 3px 6px;
+    box-shadow: 0px 0px 0px transparent;
+}
+.projSummaryContainer{
+    font-size: 1rem;
+}
+.projTechContainer{
+    font-size: 0.85rem;
+    font-weight: 100;
+    font-style: italic;
+    color: gray;
+}
+.cursor{
+    width: 4.5rem;
+    aspect-ratio: 1;
+    background-color: rgba(0, 0, 0, 0.629);
+    backdrop-filter: invert();
+    position: absolute;
+    box-shadow: 4px 6px 0px rgb(128, 128, 128);
+    top: 0;
+    left: 0;
+    translate: -50% -50%;
+    color: white;
+    font-size: 2rem;
+    transition: all 150ms;
+}
+@media screen and (width<769px) {
+    .projContainer{
+        max-width: 90vw;
+    }
+}

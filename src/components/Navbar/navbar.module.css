@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap');
+
+.navbarContainer{
+    font-family: 'Public Sans', sans-serif;
+    max-width: 100%;
+    height: 4.5rem;
+    border: 4px solid black;
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    /* backdrop-filter: blur(10px); */
+    z-index: 200;
+}
+.navbarContainer li{
+    display: inline-block;
+    list-style-type: none;
+    padding-inline: 1rem;
+}
+.navbarContainer a{
+    position: relative;
+    cursor: pointer;
+    font-weight: 900;
+    color: black;
+    text-decoration: none;
+}
+.toggleNavbar, .animate{
+    width: 2.75rem;
+    aspect-ratio: 1;
+    position: fixed;
+    right:10px;
+    translate: 0 -50%;
+    border: 3px solid;
+    box-shadow: 2px 2px 0px gray;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: pink;
+    display: none;
+}
+.toggleNavbar::after, .toggleNavbar::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background-color: black;
+}
+.toggleNavbar:focus{
+    outline: none;
+}
+.toggleNavbar::after{
+    top: 25%;
+    left: 50%;
+    translate: -50% 0%;
+    animation-direction: reverse;
+}
+.toggleNavbar::before{
+    bottom: 25%;
+    left: 25%;
+    translate: -50%, 0;
+}
+
+.toggleNavbar:active::after,
+.toggleNavbar:active::before {
+    animation: shake 150ms linear;
+}
+@keyframes shake {
+    25% {
+        transform: rotateZ(15deg);
+    }
+    75% {
+        transform: rotateZ(-15deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+.navbarContainer ul{
+    position: relative;
+    scale: 1;
+    transform-origin: top center;
+    transition: all 250ms;
+}
+@media screen and (width<576px) {
+    .navbarContainer div:first-child{
+        position: relative;
+        z-index: 200;
+    }
+    .navbarContainer{
+        width: 100vw;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 2rem;
+    }
+    .navbarContainer ul{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: solid;
+        width: 100vw;
+        min-height: 100vh;
+        background-color: white;
+        justify-content: start;
+        align-items: center;
+        scale: 1 1;
+        translate: 0 -120%;
+        z-index: -1;
+    }
+    .navbarContainer li{
+        font-size: 1rem;
+        padding: 1rem;
+        width: 100%;
+        border: 4px solid black;
+        text-align: center;
+    }
+    .navbarContainer li:nth-child(odd){
+        border-top: none;
+        border-bottom: none;
+    }
+    .toggleNavbar{
+        display: block;
+    }
+}

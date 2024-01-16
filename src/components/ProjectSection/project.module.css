@@ -1,0 +1,16 @@
+.projectContainer {
+    font-family: 'familjen grotesk';
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    background-size: 7%;
+}
+@media screen and (width<769px) {
+    .projectContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+}

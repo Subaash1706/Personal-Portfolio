@@ -1,0 +1,11 @@
+.contactContainer{
+    display: flex;
+    height: clamp(50vh, 64vh, 64.5vh);
+}
+@media screen and (width<769px) {
+    .contactContainer{
+        flex-direction: column;
+        height: fit-content;
+        gap: 15px;
+    }
+}

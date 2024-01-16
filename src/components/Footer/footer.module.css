@@ -1,0 +1,8 @@
+footer{
+    font-family: 'familjen grotesk';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    padding: 1rem;
+}

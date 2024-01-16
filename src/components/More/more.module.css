@@ -1,0 +1,250 @@
+
+.moreInfoConainer section{
+    font-family: 'familjen grotesk';
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    border: 4px solid black;
+    border-top: none;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.personalInfoContainer{
+    font-weight:100;
+    height: fit-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.textArea{
+    text-indent: 5rem;
+    max-width: 45vw;
+    font-size: 1.5rem;
+    border: 4px solid black;
+    padding: 2rem;
+    box-shadow: 4px 6px 0px wheat;
+}
+.experienceContainer{
+    background-color: #97e1fe;
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+}
+.cardContainer{
+    margin: 1rem;
+    width: 20vw;
+    min-height: 24vw;
+    background-color: whitesmoke;
+    border: 4px solid black;
+    box-shadow: 4px 6px 0px gray;
+}
+.cardContainer .title{
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 8px;
+}
+.leftContainer{
+    display: flex;
+    gap: 1.25rem;
+    background-color: #feda7c;
+    max-width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+    /* max-height: 100vh; */
+    padding: 2rem;
+}
+.verticalFlex{
+    width: 70vw;
+}
+/* .leftContainer{
+    display: flex;
+    flex-wrap: wrap;   
+} */
+.verticalFlex{
+    width: 70vw;
+    min-width: 65vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    gap: 25px;
+    justify-items: center;
+}   
+.imgSpace{
+    max-width: 25vw;
+    border: 4px solid black;
+    box-shadow: 4px 6px 0px black;
+    /* background: url(../../../public/assets/svgs/personal.svg);
+    background-position: center; */
+    overflow: hidden;
+    background: url(../../../public/assets/images/colors.jpg);
+    width: 22vw;
+    animation: bgMove 550s linear infinite forwards;
+}
+.imgSpace img{
+    width: 100%;
+    height: auto;
+    scale: 3;
+    object-fit: cover;
+
+}
+.moreInfoCardContainer{
+    padding: 15px;
+    background-color: white;
+    border: 4px solid black;
+    box-shadow: 6px 8px 0px black;
+
+}
+.moreInfoHeading{
+    font-size: 2.5vw;
+    font-weight: 900;
+}
+.moreInfoDesc{
+    padding: 15px;
+    font-size: 1.5vw;
+    border: 4px solid black;
+}
+.rightContainer{
+    border-left: 4px solid black;
+    height: 100%;
+    min-width: 20vw;
+    max-width: 30vw;
+    display: flex;
+    align-items: center;
+}
+.rightContainer div, .s2rightContainer div{
+    height: 65%;
+    border: 4px solid;
+    margin: 0 auto;
+}
+.rightContainer img{
+    object-fit: cover;
+    max-width: 100%;
+}
+.experienceContainer>.s2leftContainer{
+    border-left: 4px solid black;
+}
+.s2leftContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 12px;
+    padding: 10px;
+}
+.s2LeftCardContainer{
+    display: flex;
+    /* width: fit-content; */
+    max-width: 100%;
+    background-color: white;
+    border: 4px solid black;
+    transition: all 500ms;
+    gap: 4vw;
+    padding: 15px;
+    box-shadow: 4px 6px 0px black;
+    height: 35vh;
+    min-width: 15rem;
+    transition: all 500ms;
+}
+.cardLeft{
+    position: relative;
+}
+.cardLeftHeading{
+    font-size: 2rem;
+    font-weight: 900;
+}
+.cardLeftDuration{
+    font-size: 14px;
+    color: gray;
+}
+.cursor{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px;
+    background-color: black;
+    box-shadow: 4px 6px gray;
+    cursor: pointer;
+}
+.cursor img{
+    vertical-align: middle;
+    filter: invert();
+    transition: all 250ms;
+}
+.cardRight{
+    max-height: 100%;
+    overflow-y: auto;
+    /* visibility: hidden; */
+    /* display: none; */
+}
+.cardRightName{
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.resp li{
+    list-style-type: disc;
+    list-style-position: inside;
+}
+@keyframes bgMove {
+    0%{
+        background-position: left top;
+    }rightContainer
+    25%{
+        background-position: center center;
+    }
+    50%{
+        background-position: right bottom;
+    }
+    75%{
+        background-position: bottom center;
+    }
+}
+@media screen and (width<850px) {
+    .leftContainer{
+        width: 100vw;
+    }
+    .verticalFlex{
+        width: 100%;
+    }
+    .moreInfoHeading{
+        padding-bottom: 8px;
+    }
+    .imgSpace{display: none;}
+}
+@media screen and (width<580px) {
+    .leftContainer{
+        height:fit-content;
+    }
+    .verticalFlex{
+       grid-template-columns: 1fr;
+    }
+    .moreInfoHeading{
+        font-size:2rem;
+    }
+    .moreInfoDesc{
+        font-size: 15px;
+    }
+    .s2leftContainer{
+        width: 100%;
+    }
+    .s2LeftCardContainer{
+        width: 100%;
+        flex-direction: column; 
+        height: fit-content;
+    }
+    .cardLeft{
+        min-width: 100%;
+    }
+    .cardRight{
+        height: 75vh;
+    }
+    .cursor{
+        right: 0;
+    }
+}
