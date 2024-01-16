@@ -6,8 +6,8 @@ import rightArrow from '../../../public/assets/svgs/rightArrow.svg'
 function ProjectItem() {
     const projectImages = [ project1, project2 ]
     const projDetailsObj = [
-        { title: 'Expense/Income tracker', description: 'A Responsive Expense/Income tracker to help users keep track of their transactions.', tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'ChartJs', 'TesseractJs'] },
-        { title: 'CVHarbor', description: 'A website for effortless resume creation with pre-designed templates', tech: ['HTML', 'CSS', 'JavaScript', 'ReactJs' ] }
+        { title: 'Expense/Income tracker', description: 'A Responsive Expense/Income tracker to help users keep track of their transactions.', tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'ChartJs', 'TesseractJs'], link: "https://subaash1706.github.io/Expensetracker/index.html#" },
+        { title: 'CVHarbor', description: 'A website for effortless resume creation with pre-designed templates', tech: ['HTML', 'CSS', 'JavaScript', 'ReactJs' ], link: "https://subaash1706.github.io/cvharbor/" }
     ]
   return (
     <>
@@ -29,7 +29,7 @@ function ProjectItem() {
                         <div className={classes.projTitleContainer}>
                             { projDetailsObj[ind].title }
                             <span className={classes.toggleArrow}>
-                                <img src={rightArrow}/>
+                                <a target="_blank" href={projDetailsObj[ind].link}><img src={rightArrow}/></a>
                             </span>
                         </div>
                         <div className={classes.projSummaryContainer}>

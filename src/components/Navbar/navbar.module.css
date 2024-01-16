@@ -62,7 +62,14 @@
     left: 25%;
     translate: -50%, 0;
 }
-
+.logoContainer{
+    width: 4rem;
+    aspect-ratio: 1;
+    background: url(../../../public/assets/images/logo.png);
+    background-position: center;
+    background-size: contain;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.096))
+}
 .toggleNavbar:active::after,
 .toggleNavbar:active::before {
     animation: shake 150ms linear;

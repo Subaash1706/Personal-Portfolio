@@ -71,8 +71,8 @@
     box-shadow: 3px 6px 0px gray;
     transition: all 250ms;
 }
-.toggleArrow img{
-    padding: 5px;
+.toggleArrow a>img{
+    padding: 10px;
     filter: invert();
     vertical-align: middle;
     cursor: pointer;
@@ -82,8 +82,9 @@
     translate: 0px -2px;
     box-shadow: 3px 8px 0px gray;
 }
-.toggleArrow:hover img{
+.toggleArrow:hover a>img{
     transform: rotateZ(-45deg);
+    filter: invert();
 }
 .projContainer:hover{
     background-color: black;
@@ -92,7 +93,7 @@
 .projContainer:hover .toggleArrow{
     background-color: white;
 }
-.projContainer:hover .toggleArrow>img{
+.projContainer:hover .toggleArrow a>img{
     filter: none;
 }
 .toggleArrow:active{

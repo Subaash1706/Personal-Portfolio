@@ -33,7 +33,8 @@ function Navbar(props) {
 
   return (
     <nav className={classes.navbarContainer}>
-        <div>Subaash logo</div>
+        <div className={classes.logoContainer}>
+        </div>
         <div className={`${classes.toggleNavbar}`} onClick={navbarExpansionfunction}></div>
         <ul style={{translate: navbarExpanded ? (+windowWidth < 576 ? '0 16px' : '0 0px') : '0 -120%'}}>
             <li><a href="#heroSection" className={!props.onExpandedMoreInfoSection ? (navActiveStatus === 'navHero' ? 'navbarActive' : '') : ''} onClick={assignActiveNavLink} id='navHero'>Home</a></li>
