@@ -1,35 +1,33 @@
 import React, { useState } from 'react'
 import classes from './more.module.css'
-import Heading from '../Heading/Heading'
-import arrow from '../../../public/assets/svgs/rightArrow.svg'
-import colors from '../../../public/assets/images/colors.jpg'
+import aadhiImg from '../../../public/assets/images/xp/aadhi.jpg';
+import kluImg from '../../../public/assets/images/xp/tutor.png';
+import aadImg from '../../../public/assets/images/xp/content.jpg';
+import pinkSvg from '../../../public/assets/svgs/pinkstar.svg'
+import star from '../../../public/assets/svgs/star.svg'
+import bluestar from '../../../public/assets/svgs/bluestar.svg'
 
 function MorePersonalInformation() {
-    const [ xpExpandStatus, setXpExpandStatus ] = useState({
-        first: false, 
-        second: false, 
-        third: false
-    })
     const cardInfo = [
         {
             heading: 'Who am I?',
-            description: "I am a recent BTech graduate, who is passionate about web development. I'm self taught and I've been tinkering with the recent frontend web technologies for a while.",
-            bgColor: '#fdfd96'
+            description: "I'm a 'Frontend web developer'. I'm self taught and I've been tinkering with the recent frontend web technologies like React for a while.",
+            bgColor: '#fff'
         },
         {
             heading: 'What do I do?',
-            description: "I develop websites which are engaging and responsive. I rarely design, but I can reproduce the design into a functional website. I write tech content online alongside learning new stuff.",
-            bgColor: '#ffb2ef'
+            description: "I develop websites which are engaging and responsive. I rarely design, but I can replicate designs into functional websites. I write tech content online alongside learning new stuff.",
+            bgColor: '#fff'
         },
         {
             heading: 'Where am I at?',
-            description: "I have been consistently pursuing excellence, thereby earning academic achievements and securing a sucessful career in IT industry. ",
-            bgColor: '#bafce2'
+            description: "I have been consistently pursuing excellence, thereby earned academic achievements and secured a sucessful career as an Assistant System Engineer. ",
+            bgColor: '#fff'
         },
         {
             heading: 'What do I believe in?',
             description: "Known for my work ethic and consistency, I believe that the combination of both along with hardwork is the key to make a challenging path appear effortelessly successful.",
-            bgColor: '#87ceeb'
+            bgColor: '#fff'
         }
     ]
     const xpInfo = [
@@ -37,46 +35,21 @@ function MorePersonalInformation() {
             role: 'Tutor',
             duration: "Feb'23 - Apr'23",
             name: 'Kalasalingam Academy of Research and Education',
-            responsibilities: [
-                        "Provided daily support to freshman students for theoretical understanding and practical experiments.",
-                        "Facilitated team-based learning, ensuring timely completion of laboratory records.",
-                        "Assisted faculty in planning and executing daily experiments, contributing to curriculum development.",
-                        "Corrected student record works for accuracy before submission for approval.",
-                        "Collaborated with subject teacher on an energy auditing project, guiding methodology and analysis.",
-                        "Created a comprehensive spreadsheet for household energy audit in the energy project.",
-                        "Conducted quizzes under faculty guidance to foster creative thinking in students."
-                        ]
+            imgSrc: kluImg
         }, 
         {
             role: 'Intern',
             duration: "Jan'23 - Feb'23",
             name: 'Aadhi solar solutions',
-            responsibilities: [
-                "Contributed actively to solar energy projects, gaining hands-on experience in maintenance and troubleshooting.",
-                "Participated in the implementation of solar street lamps and water heaters",
-                "Collaborated with the design team to integrate solar infrastructure into industrial premises.",
-                "Explored agricultural applications, observing the study of a Polycarbonate-based solar dryer for drying clove.",
-                "Collaborated with engineers, technicians, and project managers for successful project execution."
-            ]
+            imgSrc: aadhiImg
         }, 
         {
             role: 'Content writer',
             duration: "Feb'22 - Mar'22",
             name: 'AskAnyDifference',
-            responsibilities: [
-                "Conducted research on assigned topics and created plagiarism-free content.",
-                "Adhered to a minimum word count (980 words) and strict article format.",
-                "Utilized online tools for grammar checks and formatting.",
-                "Contributed content on various topics, emphasizing differences between subjects.",
-                "Submitted articles for approval and, after thorough checks, released them to the web."
-            ]
+            imgSrc: aadImg
         }
     ]
-    function xpExpandHandler(e){
-        const left = document.querySelector('.cardLeft')
-        const right = document.querySelector('.cardRight')
-        setXpExpandStatus(prev=>{return{...prev, [`${e.target.id}`]: !prev[`${e.target.id}`]}})
-    }
   return (
     <div className={classes.moreInfoConainer}>
         <section className={classes.personalInfoContainer}>
@@ -94,43 +67,33 @@ function MorePersonalInformation() {
                             </div>)
                         })
                     }
-
-                </div>
-                <div className={classes.imgSpace}>
+                    <img src={pinkSvg} className={classes.pink}/>
+                    <img src={star} className={classes.star} />
+                    <img src={bluestar} className={classes.blue} />
                 </div>
             </div>
         </section>
-        <Heading innerHTML="Professional Experiences"/>
-        <section className={classes.experienceContainer}>
-            <div className={classes.s2leftContainer}>
+        {/* <section className={classes.xpInfoContainer}>
+            <div className={classes.sectionHeading}>
+                I've had experience working as
+            </div>
+            <ul>
                 {
                     xpInfo.map((item, ind)=>{
                         return(
-                            <div className={classes.s2LeftCardContainer} key={ind}>
-                                <div className={`cardLeft ${classes.cardLeft}`} style={{width: xpExpandStatus[Object.keys(xpExpandStatus)[ind]] ? '25%' : '100%'}}>
-                                    <div className={classes.cardLeftHeading}>{item.role}</div>
-                                    <div className={classes.cardLeftDuration}>{item.duration}</div>
-                                    <div className={classes.cursor} onClick={xpExpandHandler} id={Object.keys(xpExpandStatus)[ind]}>
-                                        <img src={arrow} id={Object.keys(xpExpandStatus)[ind]} style={{transform: xpExpandStatus[Object.keys(xpExpandStatus)[ind]] ? 'rotateZ(180deg)' : 'rotateZ(0deg)'}}/>
-                                    </div>
+                            <li className={classes.indXpItem} key={ind}>
+                                <img src={item.imgSrc} />
+                                <div className={classes.xpDesc} style={{display: 'flex', flexDirection: 'column'}}>
+                                    <div>{item.role}</div>
+                                    <div>{item.name}</div>
+                                    <div>{item.duration}</div>
                                 </div>
-                                <div 
-                                    className={`cardRight ${classes.cardRight}`}
-                                    style={{display: xpExpandStatus[Object.keys(xpExpandStatus)[ind]] ? 'block' : 'none'}}
-                                    >
-                                    <div className={classes.cardRightName}>
-                                        {item.name}
-                                    </div>
-                                    <ul className={classes.resp}>
-                                      {item.responsibilities.map((item, ind)=><li key={ind}>{item}</li>)}  
-                                    </ul>
-                                </div>
-                            </div>
+                            </li>
                         )
                     })
                 }
-            </div>
-        </section>
+            </ul>
+        </section> */}
     </div>
   )
 }

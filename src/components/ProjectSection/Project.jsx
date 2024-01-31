@@ -14,7 +14,6 @@ function Project() {
   }
   return (
     <div className={`projectContainer ${classes.projectContainer}`} onMouseEnter={mouseOverFn} onMouseLeave={mouseDownfn} id='projects'>
-        <ProjectItem />
     </div>
   )
 }

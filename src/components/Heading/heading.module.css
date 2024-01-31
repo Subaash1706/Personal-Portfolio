@@ -1,18 +1,19 @@
 .headingWrapper{
     max-width: 100vw;
+    height: 15vh;
     display: flex;
     justify-content: start;
     align-items: center;
     white-space: nowrap;
     background-color: black;
     color: white;
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
     font-size: 2rem;
     font-family: 'familjen grotesk';
-    overflow-x:hidden;
-    position: relative;
-    z-index: 100;
-
+    overflow:hidden;
+    z-index:200;
+    transition: filter 500ms linear;
+    text-transform: uppercase;
 }
 .headingWrapper img{
     vertical-align: middle;
@@ -25,9 +26,9 @@
     animation-timeline: scroll(root);
 }
 @keyframes scrollRight {
-    to{transform: translateX(-15%);}
+    to{transform: translateX(-25%);}
 }
-@media screen and (width<480px) {
+@media screen and (width<490px) {
     @keyframes scrollRight {
         to{transform: translateX(-45%)}
     }

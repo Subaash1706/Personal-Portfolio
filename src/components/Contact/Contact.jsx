@@ -7,7 +7,6 @@ function Contact() {
   return (
     <div className={classes.contactContainer} id='contact'>
        <Form /> 
-       <Follow />
     </div>
   )
 }

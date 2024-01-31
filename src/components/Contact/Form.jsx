@@ -4,6 +4,7 @@ import Button from '../Button/Button'
 import emailjs from '@emailjs/browser'
 import _default from '@emailjs/browser'
 
+
 function Form() {
     const [ formResponseStatus, setFormResponseStatus ] = useState(false)
     const [ name, setName ] = useState('');
@@ -39,7 +40,6 @@ function Form() {
             <div className={classes.textAreaParaContainer}>
                 <div className={classes.inputParaContainer}>
                     <input type="email" placeholder="What's your Email Id?" name='email' className={classes.emailInput}/>
-                    <p>Having a project idea? Let's do it together!</p>
                 </div> 
                 <textarea name="message" id="message" cols="30" rows="5" placeholder='Enter your message' style={{borderBottom: 'none'}}></textarea>
             </div>

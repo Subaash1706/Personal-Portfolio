@@ -6,3 +6,9 @@ footer{
     color: gray;
     padding: 1rem;
 }
+@media screen and (width<500px) {
+    footer{
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -4,7 +4,7 @@ import circle from '../../../public/assets/svgs/circle.svg'
 
 function Heading(props) {
   return (
-    <div className={classes.headingWrapper}>
+    <div className={classes.headingWrapper} style={{filter: props.intersecting ? 'brightness(1) ': 'brightness(0.25)'}} >
       <div className={classes.scrollWrapper}>
         {props.innerHTML}
         <span>

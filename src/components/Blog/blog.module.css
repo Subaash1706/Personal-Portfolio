@@ -1,4 +1,4 @@
-.blogContainer{
+/* .blogContainer{
     font-family: 'familjen grotesk';
     max-width: 100vw;
     overflow: hidden;
@@ -28,5 +28,114 @@
         font-size: 4vw;
         max-width: 95vw;
         margin: 0 auto;
+    }
+} */
+:root{
+    --ANIMATION-SPEED: 500ms;
+}
+.blogWrapper{
+    font-family: 'familjen grotesk';
+    max-width: 95%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-flow: dense;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 500ms;
+    padding-block: 3rem;
+}
+.blogWrapper .blogImages{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: scale var(--ANIMATION-SPEED), translate var(--ANIMATION-SPEED);
+}
+.blogWrapper figure{
+    overflow: hidden;
+    border: 4px solid black;
+    position: relative;
+    box-shadow: 4px 6px 0px black;
+    border-radius: 15px;
+    filter: saturate(1);
+}
+.blogWrapper figcaption{
+    position: absolute;
+    font-size: 1.35rem;
+    font-weight: 900;
+    inset: 0;
+    padding: 0.5rem;
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    transition: opacity var(--ANIMATION-SPEED), transform var(--ANIMATION-SPEED);
+}
+figure:hover .blogImages{
+    scale: 1.05;
+    translate: 0 -100%;
+}
+.blogWrapper figure:hover figcaption{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    background-color: rgb(230, 230, 230);
+    filter: none;
+}
+figcaption a{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    background-color: black;
+    right: 0;
+    margin-inline-end: 0.5rem;
+    margin-block-end: 0.5rem;
+    cursor: pointer;
+    box-shadow: 4px 6px 0px gray;
+    transition: transform calc(var(--ANIMATION-SPEED)/2), box-shadow calc(var(--ANIMATION-SPEED)/2);
+}
+figcaption a:active, figcaption a:focus{
+    box-shadow: 0px 0px 0px gray;
+    transform: translate(4px, 6px)
+}
+.toggleArrow{
+    filter: invert();
+    vertical-align: middle;
+    transform: rotateZ(20deg);
+    transition: transform calc(var(--ANIMATION-SPEED)*2);
+}
+figure:hover .toggleArrow{
+    transform: rotateZ(-45deg);
+}
+@media screen and (width>=1350px) {
+    .blogWrapper figure:nth-child(1){
+        grid-column: 1/4;
+    }
+    .blogWrapper figure:nth-child(2){
+        grid-column: 4/span 2;
+    }
+    .blogWrapper figure:nth-child(3){
+        grid-column: 1/span 4;
+    }
+    .blogWrapper figure:nth-child(4){
+        grid-column: 8/-1;
+    }
+    .blogWrapper figure:nth-child(5){
+        grid-column: 6/span 2;
+    }
+    .blogWrapper figure:nth-child(6){
+        grid-column: 5/-1;
+    }
+}
+@media screen and (width<1350px){
+    .blogWrapper{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-flow: unset;
+    }
+}
+@media screen and (width<580px) {
+    .blogWrapper figure{
+        /* box-shadow: 0px 0px 0px transparent; */
     }
 }

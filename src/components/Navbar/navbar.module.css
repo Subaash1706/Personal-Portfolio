@@ -3,18 +3,26 @@
 
 .navbarContainer{
     font-family: 'Public Sans', sans-serif;
+    width: 100vw;
     max-width: 100%;
     height: 4.5rem;
-    border: 4px solid black;
+    /* border: 4px solid black; */
+    border-inline: none;
     padding-inline: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
-    background-color: rgb(255, 255, 255);
-    /* backdrop-filter: blur(10px); */
+    background-color: rgba(255, 255, 255, 0.589);
+    backdrop-filter: blur(25px);
     z-index: 200;
+    /* box-shadow: 4px 6px 0px black; */
+}
+.navbarContainer div:first-child{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 .navbarContainer li{
     display: inline-block;
@@ -63,12 +71,11 @@
     translate: -50%, 0;
 }
 .logoContainer{
-    width: 4rem;
+    width: 3rem;
     aspect-ratio: 1;
-    background: url(../../../public/assets/images/logo.png);
+    background: url(../../../public/assets/images/navlogo.png);
     background-position: center;
     background-size: contain;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.096))
 }
 .toggleNavbar:active::after,
 .toggleNavbar:active::before {
@@ -91,7 +98,7 @@
     transform-origin: top center;
     transition: all 250ms;
 }
-@media screen and (width<576px) {
+@media screen and (width<500px) {
     .navbarContainer div:first-child{
         position: relative;
         z-index: 200;
@@ -130,5 +137,10 @@
     }
     .toggleNavbar{
         display: block;
+    }
+}
+@media screen and (width<490px){
+    .navbarContainer{
+        display: none;
     }
 }

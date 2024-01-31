@@ -158,3 +158,204 @@
         font-size: 7vw;
     }
 }
+:root{
+    --BACKGROUND-ANIMATION-PLAYSTATE: 'running';
+}
+.heroSectionWrapper{
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+}
+.heroSectionWrapper::after{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: 
+    repeating-linear-gradient(
+        45deg,
+        #d0ee30 0px,
+        #d0ee30 3px,
+        transparent 5px,
+        #d0ee30 7px
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        transparent 0px,
+        transparent 3px,
+        #d0ee30 5px,
+        transparent 7px
+    );
+    z-index: -10;
+    transition: background 500ms;
+    animation: shiftBackground 35s linear infinite;
+    animation-play-state: var(--BACKGROUND-ANIMATION-PLAYSTATE);
+}
+.heroSectionWrapper:hover::after{
+    background: 
+    repeating-linear-gradient(
+        45deg,
+        #fadf0b 0px,
+        #fadf0b 3px,
+        transparent 5px,
+        #fadf0b 7px
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        transparent 0px,
+        transparent 3px,
+        #fadf0b 5px,
+        transparent 7px
+    );
+    animation-duration: 10s;
+}
+@keyframes shiftBackground {
+    to{
+        transform: translateX(-50%);
+    }
+}
+.avatarSection{
+    background-image: url("../../../public/assets/images/avatar.png");
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    margin-inline: auto;
+    position: relative;
+    bottom: -50px;
+    animation: moveDown;
+    animation-timeline: scroll(root);
+}
+@keyframes moveDown{
+    to{
+        transform: translate(0, -60%);
+    }
+}
+.circle{
+    position: absolute;
+    z-index: -1!important;
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    left: 50%;
+    top: 5%;
+    background: rgba(255, 255, 255, 0.488);
+    /* background: rgba(4, 2, 57, 0.522); */
+    backdrop-filter: invert(1);
+    transform: translate3d(-50%, 0, 0);
+    animation: shrinkMove;
+    animation-timeline: scroll(root);
+}
+@keyframes shrinkMove{
+    to{
+        /* backdrop-filter: invert(1) blur(25px); */
+        transform: translate3d(-50%, -25%, 0) scale(15);
+    }
+}
+.marqueeNameWrapper,.marqueeStrokedNameWrapper{
+    position: absolute;
+    width: fit-content;
+    height: 30vh;
+    display: flex;
+    top: 25vh;
+    z-index: -5;
+    animation: scrollInfinite 7s infinite linear;
+}
+.marqueeStrokedNameWrapper{
+    top:55vh;
+    animation-direction: reverse;
+    animation-duration: 9s;
+}
+.mouseAnimationContainer{
+    font-family: 'familjen grotesk';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: rgb(37, 37, 37);
+    padding: 0.25rem;
+}
+.mouseAnimationContainer div{
+filter: invert();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 900;
+    gap: 0.5rem;
+}
+.mouseAnimationContainer div:first-child{
+    animation-delay: 2500ms;
+}
+.mouseAnimation{
+    width: 40px; 
+    animation: mouseAnimation 1.5s linear infinite alternate;
+}
+
+@keyframes scrollInfinite {
+    from{
+        transform: translate(0, 0)
+    }
+    to{
+        transform: translate(-50%, 0)
+    }
+}
+@keyframes mouseAnimation{
+    100%{
+       translate:0 5px;
+    }
+}
+@media screen and (width<1450px) {
+    .circle{
+        top: unset;
+        bottom: -15px;
+        width: 50vw;
+    }
+}
+@media screen and (width<900px) {
+    .circle{
+        top: unset;
+        bottom: -5%;
+        width: 75vw;
+    }
+}         
+@media screen and (width<630px) {
+    .marqueeNameWrapper{
+        top: 20%;
+        height: 25vh;
+    }
+    .marqueeStrokedNameWrapper{
+        top: 48%;
+        height: 25vh;
+    }
+    .circle{
+        display: none;
+        /* top: 55%; */
+    }
+    .mouseAnimationContainer{
+        display: none;
+    }
+    .heroSectionWrapper:hover::after{
+        animation-duration: 5s;
+    }
+}
+@media screen and (width<490px) {
+    .heroSectionWrapper{
+        height: 100svh;
+    }
+    .marqueeNameWrapper{
+        animation-duration: 18s;
+    }
+    .marqueeStrokedNameWrapper{
+        animation-duration: 20s;
+    }
+    .heroSectionWrapper::after{
+        animation-duration: 18s;
+}
+}

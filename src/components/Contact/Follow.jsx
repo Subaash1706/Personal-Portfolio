@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import classes from './follow.module.css'
+import arrow from '../../../public/assets/svgs/rightArrow.svg'
 
-function Follow() {
+function Follow(props) {
     const followObj = {
         LinkedIn: 'https://www.linkedin.com/in/subaash-b-646646238/',
         "Dev.to": 'https://dev.to/subaash_b',
@@ -24,12 +25,16 @@ function Follow() {
         setLink(followObj[e.target.id])
     }
   return (
-    <ul className={classes.followContainer}>
-        <div className={classes.banner}>See what I share on</div>
+    <ul className={classes.followContainer} onClick={(e)=>redirectToLinks(e)} style={{opacity: props.intersecting ? '1' : '0'}}>
         {
             Object.keys(followObj).map((item, ind)=>{
                 return(
-                    <li key={ind} onClick={(e)=>redirectToLinks(e)} id={item}>{item}</li>
+                    <li key={ind}  id={item}>
+                      {item}
+                      <span id={`${item}`}>
+                        <img src={arrow} className={classes.arrow} id={item}/>
+                      </span>
+                    </li>
                 )
             })
         }

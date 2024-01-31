@@ -5,7 +5,17 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
     position: relative;
+    opacity: 0;
+    filter: saturate(0);
+    background: #ffdab9;
+    background-color: #ffdab9;
+    opacity: 1;
+    background-image: radial-gradient(#fff 1.7000000000000002px, #ffdab9 1.7000000000000002px);
+    background-size: 34px 34px;
+    padding: 2rem 0.5rem;
+    transition: opacity 250ms linear, filter 750ms linear;
 }
+
 .skillName{
     font-family: '';
     aspect-ratio: 1;
@@ -16,7 +26,10 @@
     font-family: 'familjen grotesk';
     font-size: 2rem;
     border-right: 0px solid black;
-    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 4px 6px 0px black;
+    margin: 0.25rem;
+    padding: 25px;
     text-align: center;
 }
 .skillName:last-child{
@@ -46,8 +59,8 @@
 @media screen and (width<480px) {
     .skillContainer{
         gap: 5px;
-        width: 95vw;
-        margin: 0 auto;
+        width:100%;
+        padding: 0.5rem;
     }
     .skillName{
         border: 4px solid black;

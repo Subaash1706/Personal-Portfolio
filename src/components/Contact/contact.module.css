@@ -1,6 +1,6 @@
 .contactContainer{
     display: flex;
-    height: clamp(50vh, 64vh, 64.5vh);
+    max-width: 100vw;
 }
 @media screen and (width<769px) {
     .contactContainer{

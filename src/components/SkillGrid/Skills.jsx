@@ -8,10 +8,10 @@ import reactIcon from '../../../public/assets/images/icons/react.png'
 import figmaIcon from '../../../public/assets/images/icons/figma.png'
 
 
-function Skills() {
+function Skills(props) {
     const [ currentCursor, setCurrentCursor ] = useState('')
     const skillsArray = [
-        { name: 'HTML', cursor: htmlIcon, bg: 'rgba(23, 210, 251, 0.38)' },
+        { name: 'HTML', cursor: htmlIcon, bg: 'rgba(23, 210, 251,1)' },
         { name: 'CSS', cursor: cssIcon, bg: 'rgba(255, 105, 180, 1)' }, 
         { name: 'Bootstrap', cursor: bootstrapIcon, bg: 'rgba(151, 35, 201, 1)' },
         { name: 'JavaScript', cursor: jsIcon, bg: 'rgba(244, 215, 56, 1)' },
@@ -29,7 +29,7 @@ function Skills() {
         cursorTrace.style.left = `${(+e.clientX) - width}px`;
     }
   return (
-    <div className={`skillContainer ${classes.skillContainer}`}>
+    <div className={`skillContainer ${classes.skillContainer}`} style={{opacity: props.intersecting ? '1' : '0', filter: props.intersecting ? 'saturate(1)' : 'saturate(0)'}}>
         {
             skillsArray.map((item, index)=>{
                 return(

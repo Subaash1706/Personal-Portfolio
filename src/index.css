@@ -7,7 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  scroll-margin-top: 9rem;
+  scroll-margin-top: 2rem;
   -webkit-tap-highlight-color: transparent;
 }
 #root{
@@ -29,8 +29,55 @@
   filter: blur(8px);
 }  
 section{
-  margin-block: 1rem;
+  position: relative;
+  /* padding-block: 1rem; */
+  background: white;
+  max-width: 100vw;
+  overflow: hidden;
+  z-index: 150;
+}
+#blogs{
+  /* background-color: #ff8864; */
+  background-color: #ff8864;
+  opacity: 1;
+  background-image: radial-gradient(#fff 0.9px, #ff8864 0.9px);
+  background-size: 18px 18px;
+}
+#follow{
+  background-color: #a7dbd8;
+  opacity: 1;
+  background: radial-gradient(circle, transparent 20%, #a7dbd8 20%, #a7dbd8 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #a7dbd8 20%, #a7dbd8 80%, transparent 80%, transparent) 10px 10px, linear-gradient(#fff 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, #fff 0.8px, #a7dbd8 0.8px) -0.4px 0;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
 }
 *::selection{
-  background-color: rgb(255, 255, 41);
+  background-color: rgb(255, 0, 157);
+}
+
+.toggleArrow{
+  height: 100%;
+  aspect-ratio: 1;
+  text-align: center;
+  background-color: black;
+  box-shadow: 3px 6px 0px gray;
+  transition: all 250ms;
+  border: 4px solid transparent;
+}
+.toggleArrow a>img{
+  padding: 10px;
+  filter: invert();
+  vertical-align: middle;
+  cursor: pointer;
+  transition: transform 500ms;
+}
+.masterHeadingWrapper{
+  position: sticky;
+  top: 4rem;
+  z-index: 200;
+  overflow: hidden;
+  transition: filter 250ms;
+}
+@media screen and (width<490px) {
+  .masterHeadingWrapper{
+    top: 0px;
+  }
 }
