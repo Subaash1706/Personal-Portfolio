@@ -5,14 +5,14 @@ function Footer() {
   return (
     <footer>
         <div>
-            Embrace the Imperfection
+            <span>Embrace the Imperfection</span>
             <br />
-            Layout: NeuBrutalism
+            <span>Layout: NeuBrutalism</span>
         </div>
         <div style={{textAlign: 'right'}}>
-            Built using React & CSS in Tamil Nadu, India
+            <span>Built using React & CSS in Tamil Nadu, India</span>
             <br />
-            &copy;{new Date().getFullYear()} Subaash. All rights reserved
+            <span>&copy;{new Date().getFullYear()} Subaash. All rights reserved</span>
         </div>
     </footer>
   )

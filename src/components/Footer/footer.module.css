@@ -3,8 +3,17 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: gray;
+    background-color: #000;
+    opacity: 1;
+    background-image: radial-gradient(#ffffff8f 0.45px, #000 0.45px);
+    background-size: 9px 9px;
+    font-size: 1.5rem;
+    color: white;
     padding: 1rem;
+}
+footer span{
+    display: inline-block;
+    padding: 0.25rem;
 }
 @media screen and (width<500px) {
     footer{
