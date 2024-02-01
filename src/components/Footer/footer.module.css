@@ -14,14 +14,27 @@ footer{
 footer span{
     display: inline-block;
     padding: 0.25rem;
+    text-align: center;
+}
+.rights{
+    display: inline-block;
+    font-size: 1rem;
 }
 @media screen and (width<500px) {
     footer{
         flex-direction: column;
         text-align: center;
         justify-content: center;
+        align-items: center;
     }
     footer span{
         text-align: center;
+    }
+    .rights{
+        text-align: center;
+        margin-inline: auto;
+    }
+    .second{
+        text-align: center!important;
     }
 }
