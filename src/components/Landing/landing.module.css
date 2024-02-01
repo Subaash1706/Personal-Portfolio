@@ -1,3 +1,6 @@
+:root{
+    --PATTERN-BG-COLOR: #62e1c1;
+}
 .container{
     background-color: #ff7543;
     width: 100%;
@@ -65,11 +68,16 @@
     top: 50%;
     left: 50%;
     border: 5px solid black;
-    background-color: white;
-    /* background-color: rgb(252, 115, 65); */
+    background-color: #fff;
+    opacity: 1;
+    background: radial-gradient(circle, transparent 20%, #fff 20%, #fff 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #fff 20%, #fff 80%, transparent 80%, transparent) 10px 10px, linear-gradient(var(--PATTERN-BG-COLOR) 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, var(--PATTERN-BG-COLOR) 0.8px, #fff 0.8px) -0.4px 0;
+    background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
     transform: translate(-50%, -50%);
     transform-origin: center;
     transition: background-color 250ms; 
+}
+.innerCircle:hover, .cursor:hover{
+    --PATTERN-BG-COLOR: #ff7543;
 }
 .cursor{
     font-family: 'familjen grotesk';
@@ -185,6 +193,9 @@
     }
 }
 @media (width<450px){
+    .landingPageImageContainer img:nth-child(3), .landingPageImageContainer img:last-child{
+        display: none;
+    }
     .circle img{
         max-width: 85vw;
     }

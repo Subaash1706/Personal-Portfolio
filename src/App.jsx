@@ -3,37 +3,11 @@ import ReactDOM from 'react-dom'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Main from './components/Main/Main'
-import Heading from './components/Heading/Heading'
-import Skills from './components/SkillGrid/Skills'
-import Project from './components/ProjectSection/Project'
-import Blog from './components/Blog/Blog'
-import Contact from './components/Contact/Contact'
-import Footer from './components/Footer/Footer'
 import LandingPage from './components/Landing/LandingPage'
-import MorePersonalInformation from './components/More/MorePersonalInformation'
 
 function App(props) {
-  const [ landingPageVisibility, setLandingPageVisibility ] = useState(true)
   const [ moreInfoSection, setMoreInfoSection ] = useState(false)
   const [ pageLoadState, setPageLoadState ] = useState({imageState: false, docState: false})
-  // useEffect(()=>{
-  //   if(landingPageVisibility){
-  //      setTimeout(() => {
-  //         setLandingPageVisibility(false)
-  //      }, 4150);
-  //   }
-  // }, [] )
-  // function collapseMoreInfo(data){
-  //   if(data) setMoreInfoSection(false)
-  // }
-  const [ progress, setProgress ] = useState(0);
-  const [ progressPercentage, setProgressPercentage ] = useState(0);
-  // useEffect(()=>{
-  //   const interval = setInterval(()=>{
-  //     setProgress(prev=>(prev>=100 ? prev : prev+=10));
-  //   }, 150)
-  //   return ()=> clearInterval(interval);
-  // },[])
 
   useEffect(() => {
     const handleLoad = () => {
@@ -52,6 +26,7 @@ function App(props) {
     images.forEach((item) => {
       item.addEventListener('load', handleImageLoad);
     });
+    if(document.readyState === "complete")setPageLoadState((prev) => ({ ...prev, docState: true }));
     return () => {
       window.removeEventListener('load', handleLoad);
       images.forEach((item) => {
@@ -64,7 +39,6 @@ function App(props) {
 
   return (
     <>
-      {/* {landingPageVisibility && <LandingPage />} */}
       {
         ReactDOM.createPortal(
           <LandingPage progress={pageLoadState}/>,

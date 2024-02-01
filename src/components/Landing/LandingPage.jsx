@@ -22,6 +22,7 @@ function LandingPage({progress}) {
   }
   const { imageState: image, docState: doc } = progress;
   function renderDynamicCursorText(){
+    // alert(`image: ${image}, doc: ${doc}`);
     if(!image && !doc) {
       return 'Loading assets'
     }
@@ -59,27 +60,27 @@ function LandingPage({progress}) {
   function preventScroll(e){e.preventDefault();}
   return (
   <>
-    {!loadHide && <div className={`${classes.container}`} id='loadContainer' onWheel={preventScroll} onScroll={preventScroll}>
+    {!loadHide && <div className={`${classes.container}`} id='loadContainer'>
       <div className={classes.landingPageContainer}>
-          <div>
+          <div className={classes.landingPageImageContainer}>
             <img src={welcome} />
             <img src={welcome} />
             <img src={welcome} />
             <img src={welcome} />
           </div>
-          <div>
+          <div className={classes.landingPageImageContainer}>
             <img src={wish} />
             <img src={wish} />
             <img src={wish} />
             <img src={wish} />
           </div>
-          <div>
+          <div className={classes.landingPageImageContainer}>
             <img src={welcome} />
             <img src={welcome} />
             <img src={welcome} />
             <img src={welcome} />
           </div>
-          <div>
+          <div className={classes.landingPageImageContainer}>
             <img src={wish} />
             <img src={wish} />
             <img src={wish} />

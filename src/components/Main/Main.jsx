@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import classes from './main.module.css'
 import Heading from '../Heading/Heading'
 import Skills from '../SkillGrid/Skills'
-import Project from '../ProjectSection/Project'
-import Blog from '../Blog/Blog'
 import Contact from '../Contact/Contact'
 import Footer from '../Footer/Footer'
 import HeroSection from '../Hero/HeroSection'
@@ -94,7 +91,6 @@ function Main(props) {
         </section>
 
         <section>
-          {/* <hr /> */}
           <Footer />
         </section> 
 

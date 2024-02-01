@@ -1,6 +1,5 @@
 import React from 'react'
 import classes from './project.module.css'
-import ProjectItem from './ProjectItem'
 import dotBg from '../../../public/assets/svgs/dotbackground.svg'
 
 function Project() {

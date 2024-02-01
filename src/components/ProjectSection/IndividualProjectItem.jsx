@@ -8,7 +8,7 @@ const IndividualProjectItem = (props) => {
         '#69d2e7', '#7fbc8c', '#ff6b6b', '#ff69b4', 'c4a1ff', '#e3dff2', '#ffff00', '#a388ee','#7df9ff', '#ff4911'
     ]
     const shortPalette = [
-        '#7fbc8c', '#a388ee', '#ff4911','#ff6b6b'
+        '#7fbc8c', '#a388ee', '#ffa07a','#ff6b6b'
     ]
     function cursorMoveHandler(e, image){
         const x = e.clientX;

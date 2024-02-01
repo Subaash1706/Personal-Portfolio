@@ -149,6 +149,7 @@
     position: relative;
     z-index: 5;
 }
+
 .indItem:last-child{
     margin-block-end: none;
 }
@@ -208,6 +209,18 @@
 .toggleArrow:hover a>img, .indItem:hover a>img{
     transform: rotateZ(-45deg);
     filter: invert();
+}
+.info{
+    font-family: 'familjen grotesk';
+    position: absolute;
+    right: 0;
+    transform: translateY(120%);
+    font-weight: 900;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    opacity: 0.5;
 }
 @media screen and (width>950px) {
     .projImage{
