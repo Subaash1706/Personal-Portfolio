@@ -3,6 +3,7 @@ import classes from './landing.module.css'
 import welcome from '../../../public/assets/svgs/welcome.svg'
 import wish from '../../../public/assets/svgs/msg.svg'
 import loading from '../../../public/assets/svgs/loadingcircle.svg'
+import ready from '../../../public/assets/svgs/ready.svg';
 
 function LandingPage({progress}) {
   const [ cursorState, setCursorState ] = useState(false)
@@ -88,7 +89,7 @@ function LandingPage({progress}) {
           </div>
       </div>
       <div className={`${classes.circle}`}>
-        <img src={loading} loading='eager'/>
+        <img src={(image && doc) ? ready : loading} loading='eager'/>
         <div className={`${classes.innerCircle}`} onMouseMove={moveCursor} onMouseLeave={()=>setCursorState(false)} onMouseEnter={()=>setCursorState(true)} id='innerCircle'>
           <div className={`${classes.cursor} ${reveal && classes.zoomInOut}`} id='loaderCursor' style={{top: !cursorState && '50%', left: !cursorState && '50%'}} onClick={revealSiteContent}>
             { !reveal ? renderDynamicCursorText() : '' }
