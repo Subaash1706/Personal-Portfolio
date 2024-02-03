@@ -110,10 +110,48 @@
     transition: all 250ms;
     border-radius: 15px;
 }
-.cursor:empty{
+.subCursor{
+    font-family: 'familjen Grotesk';
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.25rem;
+    border:solid;
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10vh;
+    opacity: 0;
+    border: none;
+    aspect-ratio: 1;
+    scale: 1;
+    border-radius: 50%;
+    border-radius: 10px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 300;
+    transition: all 450ms ease-out;
+    pointer-events: none;
+    transform-origin: center;
+    border: 3px solid rgba(0, 0, 0, 0.883);
+    box-shadow: 2px 4px 0px black;
+}
+@keyframes rotate{
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+.subCursor:empty{
     border: none;
 }
-.subCursor{
+.cursor:empty{
+border: none;
+    background:#add8e6;
+}
+/* .subCursor{
     width: 50px;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -129,7 +167,7 @@
     transform: rotateZ(-45deg);
     filter: drop-shadow(0px 2px 0px black);
     display: none;
-}
+} */
 .indItem{
     font-family: 'familjen grotesk';
     display: flex;
@@ -253,6 +291,9 @@
         margin-block: 1rem;
     } */
     .cursor{
+        display: none!important;
+    }
+    .subCursor{
         display: none!important;
     }
     .desc{
