@@ -28,7 +28,8 @@ function LandingPage({progress}) {
       return 'Loading assets'
     }
     else{
-      if(image && !doc) {
+      if(!image && doc) return 'Loading assets'
+      else if(image && !doc) {
         return 'Rendering page';
       }
       else if(image && doc) return 'Click to reveal'
