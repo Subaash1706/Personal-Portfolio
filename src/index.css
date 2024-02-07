@@ -112,6 +112,18 @@ section{
   background-size: 9px 9px;
   background-image: repeating-linear-gradient(-45deg, #fff 0, #fff 0.9px, #ff7543 0, #ff7543 50%);
 }
+.slideLeft{
+  animation: scrollForUnSupported 50s infinite linear !important;
+}
+
+@keyframes scrollForUnSupported {
+  from{
+      transform: translate(0, 0);
+  }
+  to {
+      transform: translate(-50%, 0);
+  }
+}
 @media screen and (width<490px) {
   .masterHeadingWrapper{
     top: 0px;

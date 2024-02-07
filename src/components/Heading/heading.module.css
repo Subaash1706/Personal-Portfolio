@@ -21,8 +21,16 @@
 .scrollWrapper{
     width: max-content;
     flex-wrap: nowrap;
-    animation: scrollRight linear;
-    animation-timeline: scroll(root);
+    /* animation: scrollRight linear;
+    animation-timeline: scroll(root); */
+}
+
+  
+@supports(animation-timeline: scroll()){
+    .scrollWrapper{
+        animation: scrollRight linear;
+        animation-timeline: scroll(root);
+    }
 }
 @keyframes scrollRight {
     to{transform: translateX(-25%);}
