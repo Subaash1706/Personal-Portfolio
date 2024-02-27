@@ -19,6 +19,7 @@
     box-shadow: 4px 6px 0px black;
     border-radius: 15px;
     transition: translate 250ms, box-shadow 250ms;
+    cursor: pointer;
 }
 .followContainer span{
     display: block;
