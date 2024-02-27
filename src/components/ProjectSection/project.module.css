@@ -42,4 +42,7 @@
     .projectWrapper{
         padding-block: 2rem;
     }
+    .projectWrapper::after{
+        display:none;
+    }
 }

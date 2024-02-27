@@ -266,6 +266,9 @@
     z-index: -5;
     animation: scrollInfinite 7s infinite linear;
 }
+.marqueeNameWrapper *, .marqueeStrokedNameWrapper *{
+    background: transparent;
+}
 /* .marqueeNameWrapper *{
     transform: translate(0,0) skew(25deg);
 }
