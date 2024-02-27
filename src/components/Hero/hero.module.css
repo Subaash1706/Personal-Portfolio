@@ -278,7 +278,7 @@
     animation-duration: 9s;
 }
 .mouseAnimationContainer{
-    background-image: url(../../../public/assets/svgs/scroll\ down.svg);
+    background-image: url(../../../public/assets/svgs/scrolldown.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
