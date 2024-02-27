@@ -2,7 +2,7 @@ footer{
     font-family: 'familjen grotesk';
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     background-color: #000;
     opacity: 1;
     background-image: radial-gradient(#ffffff8f 0.45px, #000 0.45px);
@@ -14,13 +14,78 @@ footer{
 footer span{
     display: inline-block;
     padding: 0.25rem;
-    text-align: center;
+    text-align: left;
+}
+.second span:first-child{
+    text-align: right;
 }
 .rights{
-    display: inline-block;
     font-size: 1rem;
 }
-@media screen and (width<500px) {
+.coffeeLink{
+    margin-block: 0.5rem;
+    position: relative;
+    flex-basis: 100px;
+    max-width: 60px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 100;
+    transition: all 500ms;
+}
+.coffeeLink::after{
+    content: 'If you are generous today, Buy me a Coffee!';
+    position: absolute;
+    white-space: nowrap;
+    padding: 1rem;
+    border-radius: 25px;
+    top: 50%;
+    left: 115%;
+    color: black;
+    font-weight: 900;
+    font-size: 1rem;
+    background: yellow;
+    transform: translate(-5%, -50%);
+    opacity: 0;
+    scale: 0.5;
+    transform-origin: top left;
+    transition: all 500ms;
+    z-index: -1;
+}
+.coffeeLink:hover::after{
+    scale: 1;
+    opacity: 1;
+    transform: translate(0, -35%) rotate(15deg);
+}
+.coffeeLink:hover{
+    transform: rotate(-15deg)
+}
+.coffeeLink img{
+    max-width: 60px;
+    height: auto;
+}
+.second{
+    text-align: right;
+}
+@media screen and (width<770px) {
+    .coffeeLink{
+        max-width: 100%;
+        height: fit-content;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .coffeeLink:hover{
+        transform: unset;
+    }
+    .coffeeLink:hover::after{
+        transform:  translate(0, -50%) rotate(0deg);
+    }
     footer{
         flex-direction: column;
         text-align: center;
@@ -36,5 +101,8 @@ footer span{
     }
     .second{
         text-align: center!important;
+    }
+    .second span:first-child{
+        text-align: center;
     }
 }
