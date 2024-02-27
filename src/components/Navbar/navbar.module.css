@@ -104,6 +104,7 @@
         z-index: 200;
     }
     .navbarContainer{
+        display: none;
         width: 100vw;
         flex-direction: column;
         justify-content: start;
@@ -139,8 +140,4 @@
         display: block;
     }
 }
-@media screen and (width<490px){
-    .navbarContainer{
-        display: none;
-    }
-}
+
