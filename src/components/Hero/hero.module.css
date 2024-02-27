@@ -253,7 +253,7 @@
 }
 @keyframes shrinkMove{
     to{
-        /* backdrop-filter: invert(1) blur(25px); */
+        /* backdrop-filter: blur(25px); */
         transform: translate3d(-50%, -25%, 0) scale(15);
     }
 }
@@ -266,36 +266,44 @@
     z-index: -5;
     animation: scrollInfinite 7s infinite linear;
 }
+/* .marqueeNameWrapper *{
+    transform: translate(0,0) skew(25deg);
+}
+.marqueeStrokedNameWrapper *{
+    transform: translate(0, 0) skew(-25deg);
+} */
 .marqueeStrokedNameWrapper{
     top:55vh;
     animation-direction: reverse;
     animation-duration: 9s;
 }
 .mouseAnimationContainer{
+    background-image: url(../../../public/assets/svgs/scroll\ down.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     font-family: 'familjen grotesk';
     position: absolute;
-    bottom: 0;
-    left: 0;
+    width: 150px;
+    aspect-ratio: 1;
+    top: 79%;
+    left: 88%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.75rem;
-    background-color: rgb(37, 37, 37);
-    padding: 0.25rem;
+    animation: rotateInfinite 8s linear infinite;
 }
-.mouseAnimationContainer div{
-filter: invert();
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 900;
-    gap: 0.5rem;
+.mouseAnimationContainer img{
+    width: 40px;
+    animation: rotateInfinite 8s linear infinite reverse, opa 2s linear infinite;
 }
-.mouseAnimationContainer div:first-child{
-    animation-delay: 2500ms;
+@keyframes opa {
+    0%, 100%{scale: 1}
+    50%{scale: 0.85}
 }
-.mouseAnimation{
-    width: 40px; 
-    animation: mouseAnimation 1.5s linear infinite alternate;
+@keyframes rotateInfinite {
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg);}
 }
 
 @keyframes scrollInfinite {
@@ -306,11 +314,7 @@ filter: invert();
         transform: translate(-50%, 0)
     }
 }
-@keyframes mouseAnimation{
-    100%{
-       translate:0 5px;
-    }
-}
+
 @media screen and (width<1450px) {
     .circle{
         top: unset;
@@ -338,11 +342,15 @@ filter: invert();
         display: none;
         /* top: 55%; */
     }
-    .mouseAnimationContainer{
-        display: none;
-    }
     .heroSectionWrapper:hover::after{
         animation-duration: 5s;
+    }
+}
+@media screen and (width< 530px) {
+    .mouseAnimationContainer{
+        top: -10px;
+        scale: 0.85;
+        left: 70%;
     }
 }
 @media screen and (width<490px) {
@@ -357,5 +365,5 @@ filter: invert();
     }
     .heroSectionWrapper::after{
         animation-duration: 18s;
-}
+    }
 }

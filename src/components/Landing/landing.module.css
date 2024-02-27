@@ -72,6 +72,7 @@
     opacity: 1;
     background: radial-gradient(circle, transparent 20%, #fff 20%, #fff 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #fff 20%, #fff 80%, transparent 80%, transparent) 10px 10px, linear-gradient(var(--PATTERN-BG-COLOR) 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, var(--PATTERN-BG-COLOR) 0.8px, #fff 0.8px) -0.4px 0;
     background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+    /* box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.628); */
     transform: translate(-50%, -50%);
     transform-origin: center;
     transition: background-color 250ms; 
@@ -95,14 +96,15 @@
     border-radius: 50%;
     top: 50%;
     left: 50%;
-    position: absolute;
+    position: relative;
     outline: 4px solid black;
     transform: translate(-50%, -50%);
     background-color: white;
     background-color: #62e1c1;
     user-select: none;
     transform-origin: center;
-    transition: all 250ms;
+    transition: all 550ms;
+    z-index: 100;
 }
 .cursor:hover{
     background-color: rgb(255, 117, 67);
@@ -154,11 +156,14 @@
     position: absolute;
     top: 79%;
     left: 88%;
-    animation: shrink 350ms ease-out forwards, rotate 5s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: shrink 350ms linear forwards, rotateInfinite 4s linear infinite;
 }
-@keyframes rotate{
+@keyframes rotateInfinite{
     to{
-        transform:translate(0, 0) rotateZ(180deg) scale(1);
+        transform: rotate(180deg);
     }
 }
 @keyframes zoomInOut {
@@ -188,8 +193,9 @@
         max-width: 75vw;
     }
     .shrink{
-        top:0;
-        left: 80%;
+        top: -10px;
+        scale: 0.85;
+        left: 70%;
     }
 }
 @media (width<450px){
