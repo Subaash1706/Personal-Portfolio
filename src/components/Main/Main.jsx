@@ -27,7 +27,7 @@ function Main(props) {
     rootMargin: '-150px 0px 0px 0px'
   });
   const { ref:projectRef, inView:projectInView } = useInView({
-    threshold: 0.15,
+    threshold: 0,
     rootMargin: '-150px 0px 0px 0px'
   });
   const { ref:blogRef, inView:blogInView } = useInView({

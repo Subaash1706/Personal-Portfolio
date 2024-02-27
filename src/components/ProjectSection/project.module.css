@@ -16,6 +16,7 @@
 }
 
 .projectWrapper{
+    position: relative;
     opacity: 0;
     width: 100%;
     transition: opacity 500ms;
@@ -25,6 +26,17 @@
     background: radial-gradient(circle, transparent 20%, #87ceeb 20%, #87ceeb 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #87ceeb 20%, #87ceeb 80%, transparent 80%, transparent) 10px 10px, linear-gradient(#fff 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, #fff 0.8px, #87ceeb 0.8px) -0.4px 0;
     background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
     padding-block: 5rem;
+}
+.projectWrapper::after{
+    content: "\24D8\  Hoverable items";
+    position: absolute;
+    right: 0%;
+    top: 0;
+    font-family: 'familjen grotesk';
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    padding: 8px;
 }
 @media screen and (width<950px) {
     .projectWrapper{

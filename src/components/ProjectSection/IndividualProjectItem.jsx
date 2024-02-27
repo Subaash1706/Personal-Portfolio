@@ -1,14 +1,21 @@
 import styles from './item.module.css'
 import rightArrow from '../../../public/assets/svgs/rightArrow.svg'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const IndividualProjectItem = (props) => {
     const [ cursorImage, setCursorImage ] = useState('')
+    const [ mobileViewStatus, setMobileViewStatus ]= useState(false);
+
+    useEffect(()=>{
+      if(+window.innerWidth < 500) setMobileViewStatus(true)
+      else setMobileViewStatus(false)
+  }, [ window.innerWidth ])
+
     const colorPalette = [
         '#69d2e7', '#7fbc8c', '#ff6b6b', '#ff69b4', 'c4a1ff', '#e3dff2', '#ffff00', '#a388ee','#7df9ff', '#ff4911'
     ]
     const shortPalette = [
-        '#DCFFB7', '#7BD3EA', '#ffbb64','#ff6b6b'
+        '#DCFFB7', '#7BD3EA', '#ffbb64','#cfc9bd'
     ]
     function cursorMoveHandler(e, image){
         const x = e.clientX;
@@ -65,7 +72,7 @@ const IndividualProjectItem = (props) => {
                             id={`indItem-${ind}`} 
                             style={{backgroundColor: shortPalette[ind]}}
                         >
-                            <div className={styles.projImage} style={{background: `url(${item.imageSrc[0]}) 0% 0% /contain`}}></div>
+                            <div className={styles.projImage} style={{background: `url(${item.imageSrc[0]}) 0% 0% / contain`, aspectRatio: mobileViewStatus ? '0.52/1': '16/9'}}></div>
                             <div className={styles.title}>
                                 <span>{item.title}</span>
                                 <ul className={styles.techStack}>
