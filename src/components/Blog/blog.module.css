@@ -1,7 +1,7 @@
 :root{
     --ANIMATION-SPEED: 500ms;
 }
-.blogWrapper{
+/* .blogWrapper{
     font-family: 'familjen grotesk';
     max-width: 95%;
     margin-inline: auto;
@@ -104,6 +104,110 @@ figure:hover .toggleArrow{
 }
 @media screen and (width<580px) {
     .blogWrapper figure{
-        /* box-shadow: 0px 0px 0px transparent; */
+        box-shadow: 0px 0px 0px transparent;
     }
+} */
+.blogContainer{
+    /* padding: 3rem; */
+    margin-block-start: 2rem;
+    font-family: 'familjen grotesk';
+    max-width: 95%;
+    margin-inline: auto;
+    display: grid;
+    gap: 15px;
+    padding-block: 3rem;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
+}
+.blogWrapper{
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: white;
+    width: 100%;
+    height: 100%;
+    border: solid;
+    border-radius: 15px;
+    box-shadow: 4px 6px 0 black;
+}
+
+.blogWrapper img{
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* border: solid; */
+}
+.title{
+    font-size: 1.25rem;
+    font-weight: 900;
+    padding: 1rem 5px;
+    text-decoration: none;
+    color: black;
+}
+.title:hover, .title:focus{
+    text-decoration: underline;
+    color: rgb(76, 76, 76);
+}
+.title:active{
+    color: black;
+}
+.blogInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.interactions{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-block-end: 0.25rem;
+    height: 5rem;
+    gap: 1rem;
+}
+.interactions *{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 18px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.23);
+    border-radius: 10px;
+    color: rgb(54, 54, 54);
+    font-weight: 900;
+}
+.redirect{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: 4rem;
+    aspect-ratio: 1;
+    border: solid;
+    right: -10px;
+    top: -5px;
+    background: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    font-weight: 900;
+    cursor: pointer;
+}
+.redirect a{
+    text-decoration: none;
+    color: black;
+}
+.redirect img{
+    width: 20px;
+    transform: rotate(-45deg);
+}
+@keyframes infiniteRotate {
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
 }
