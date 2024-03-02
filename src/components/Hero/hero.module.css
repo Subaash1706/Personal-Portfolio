@@ -245,8 +245,7 @@
     left: 50%;
     top: 5%;
     background: rgba(255, 255, 255, 0.488);
-    /* background: rgba(4, 2, 57, 0.522); */
-    backdrop-filter: invert(1);
+    backdrop-filter: url(#blur) invert(1);
     transform: translate3d(-50%, 0, 0);
     animation: shrinkMove;
     animation-timeline: scroll(root);

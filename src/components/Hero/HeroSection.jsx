@@ -32,6 +32,7 @@ function HeroSection(props) {
   }
   else rootElement.style.setProperty('--BACKGROUND-ANIMATION-PLAYSTATE', 'paused');
   return (
+  <>
     <div className={classes.heroSectionWrapper} id='heroSection'>
       <div className={classes.marqueeNameWrapper} style={{animationPlayState: heroAnimationState ? 'running' : 'paused'}}>
         <img src={nameSvg} className={classes.marqueeName} alt='Subaash'/>
@@ -52,6 +53,7 @@ function HeroSection(props) {
             <img src={scrollArrow} alt='Scroll down'/>
         </div>
     </div>
+  </>
   )
 }
 

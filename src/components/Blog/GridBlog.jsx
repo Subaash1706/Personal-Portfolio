@@ -26,7 +26,7 @@ const GridBlog = (props) => {
             imageSource.map((item, ind)=>{
                 return(
                     <div className={styles.blogWrapper} key={`${item.title}_${ind}`}>
-                        <span style={{position: 'relative', display: 'inline-block'}}>
+                        <span style={{position: 'relative', display: 'inline-block', backgroundSize: 'contain'}}>
                             <img src={item} />
                         </span>
                         <div className={styles.blogInfo}>
