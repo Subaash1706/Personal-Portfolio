@@ -47,7 +47,7 @@ function App(props) {
       }
       {
       <>
-        <Navbar onExpandedMoreInfoSection={moreInfoSection} onCollapseMoreInfoSection={(data)=>collapseMoreInfo(data)}/>
+        {/* <Navbar onExpandedMoreInfoSection={moreInfoSection} onCollapseMoreInfoSection={(data)=>collapseMoreInfo(data)}/> */}
         {!moreInfoSection && <Main onExpandMoreSectionFromHero={(data)=>{setMoreInfoSection(data)}}/>}
       </>
       }

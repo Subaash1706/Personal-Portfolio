@@ -82,7 +82,7 @@ section{
 }
 .masterHeadingWrapper{
   position: sticky;
-  top: 4rem;
+  top: 0px;
   z-index: 200;
   overflow: hidden;
   transition: filter 250ms;
