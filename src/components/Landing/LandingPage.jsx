@@ -74,28 +74,64 @@ function LandingPage({progress}) {
     {!loadHide && <div className={`${classes.container}`} id='loadContainer'>
       <div className={classes.landingPageContainer}>
           <div className={classes.landingPageImageContainer}>
+            {/* <img src={welcome} alt='Welcome text'/> */}
+            <span>Welcome</span>
+            <span>Welcome</span>
+            <span>Welcome</span>
+            <span>Welcome</span>
+            {/* <img src={welcome} alt='Welcome text'/>
             <img src={welcome} alt='Welcome text'/>
-            <img src={welcome} alt='Welcome text'/>
-            <img src={welcome} alt='Welcome text'/>
-            <img src={welcome} alt='Welcome text'/>
+            <img src={welcome} alt='Welcome text'/> */}
           </div>
           <div className={classes.landingPageImageContainer}>
+            {/* <img src={wish} alt='Greeting'/>
             <img src={wish} alt='Greeting'/>
             <img src={wish} alt='Greeting'/>
-            <img src={wish} alt='Greeting'/>
-            <img src={wish} alt='Greeting'/>
+            <img src={wish} alt='Greeting'/> */}
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
           </div>
           <div className={classes.landingPageImageContainer}>
+            {/* <img src={welcome} alt='Welcome text'/>
             <img src={welcome} alt='Welcome text'/>
             <img src={welcome} alt='Welcome text'/>
-            <img src={welcome} alt='Welcome text'/>
-            <img src={welcome} alt='Welcome text'/>
+            <img src={welcome} alt='Welcome text'/> */}
+            <span>Welcome</span>
+            <span>Welcome</span>
+            <span>Welcome</span>
+            <span>Welcome</span>
           </div>
           <div className={classes.landingPageImageContainer}>
+            {/* <img src={wish} alt='Greeting'/>
             <img src={wish} alt='Greeting'/>
             <img src={wish} alt='Greeting'/>
+            <img src={wish} alt='Greeting'/> */}
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
+          </div>
+          <div className={classes.landingPageImageContainer}>
+            {/* <img src={welcome} alt='Welcome text'/> */}
+            <span>Welcome</span>
+            <span>Welcome</span>
+            <span>Welcome</span>
+            <span>Welcome</span>
+            {/* <img src={welcome} alt='Welcome text'/>
+            <img src={welcome} alt='Welcome text'/>
+            <img src={welcome} alt='Welcome text'/> */}
+          </div>
+          <div className={classes.landingPageImageContainer}>
+            {/* <img src={wish} alt='Greeting'/>
             <img src={wish} alt='Greeting'/>
             <img src={wish} alt='Greeting'/>
+            <img src={wish} alt='Greeting'/> */}
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
+            <span>I'm Glad you're here</span>
           </div>
       </div>
       <div className={`${classes.circle}`}>

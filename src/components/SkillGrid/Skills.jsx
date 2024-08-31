@@ -33,7 +33,8 @@ function Skills(props) {
         {
             skillsArray.map((item, index)=>{
                 return(
-                    <div key={index} className={classes.skillName} style={{backgroundColor: item.bg}} id={index} onMouseMove={(e)=>mouseMoveHandler(e, item)}>{item.name}</div>
+                    <div key={index} className={classes.skillName} style={{backgroundColor: item.bg}} id={index} onMouseMove={(e)=>mouseMoveHandler(e, item)}>{item.name}
+                    </div>
                 )
             })
         }

@@ -109,6 +109,7 @@
     box-shadow: 4px 6px 0px black;
     transition: all 250ms;
     border-radius: 15px;
+    z-index: 900;
 }
 .subCursor{
     font-family: 'familjen Grotesk';
@@ -128,16 +129,20 @@
     border: none;
     aspect-ratio: 1;
     scale: 1;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border-radius: 10px;
+    /* border-radius: 50%; */
     background-color: #fff;
     transform: translate(-50%, -50%);
-    z-index: 300;
-    transition: all 450ms ease-out;
+    z-index: 900;
+    transition: all 250ms ease-out;
     pointer-events: none;
     transform-origin: center;
     border: 3px solid rgba(0, 0, 0, 0.883);
     box-shadow: 2px 4px 0px black;
+}
+.subCursorArrowImage{
+    transform: rotate(-45deg);
 }
 @keyframes rotate{
     to{
@@ -148,8 +153,9 @@
     border: none;
 }
 .cursor:empty{
-border: none;
-    background:#add8e6;
+    border: none;
+    background:transparent;
+    box-shadow: 0px 0px 0px transparent;
 }
 /* .subCursor{
     width: 50px;
@@ -186,6 +192,8 @@ border: none;
     background-color: white;
     position: relative;
     z-index: 5;
+    overflow: hidden;
+    /* cursor: none; */
 }
 
 .indItem:last-child{
@@ -197,6 +205,27 @@ border: none;
 }
 .indItem:hover li, .indItem:hover .desc{
     color: black;
+}
+.title{
+    position: relative;
+    /* overflow: hidden; */
+}
+.decorativeTitle{
+    position: absolute;
+    font-size: 7rem;
+    left: -10%;
+    top: -10%;
+    width: 100%;
+    opacity: 5%;
+    font-weight: 1000;
+    line-height: -50;
+    width: fit-content; 
+    height: fit-content;
+    /* letter-spacing: -5px; */
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    /* display: inline; */
 }
 .title span{
     font-size: 2.25rem;
@@ -215,11 +244,13 @@ border: none;
     font-size: 1rem;
     padding-inline-end: 0.75rem;
     color:  black;
+    /* color: white; */
 }
 .desc{
     font-size: 1rem;
     max-width: 20%;
     color: black;
+    /* color: white; */
     border-left: 1.75px solid gray;
     padding-inline: 0.75rem;
 }
@@ -260,6 +291,7 @@ border: none;
     border-radius: 15px;
     opacity: 0.5;
 }
+
 @media screen and (width>950px) {
     .projImage{
         display: none;

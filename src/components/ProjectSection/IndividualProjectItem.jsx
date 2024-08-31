@@ -25,6 +25,7 @@ const IndividualProjectItem = (props) => {
         const wrapper = document.querySelector('#projectWrapper')
         const wrapperX = wrapper.getBoundingClientRect().x;
         const wrapperY = wrapper.getBoundingClientRect().y;
+        // console.log(wrapperX)
         cursor.style.left = `${x-wrapperX}px`
         cursor.style.top = `${y-wrapperY}px`
         setCursorImage(image)
@@ -74,21 +75,25 @@ const IndividualProjectItem = (props) => {
                         >
                             <div className={styles.projImage} style={{background: `url(${item.imageSrc[0]}) 0% 0% / contain`, aspectRatio: mobileViewStatus ? '0.52/1': '16/9'}}></div>
                             <div className={styles.title}>
+                                {!mobileViewStatus && <div className={styles.decorativeTitle}>{item.title}</div>}
                                 <span>{item.title}</span>
                                 <ul className={styles.techStack}>
                                     {item.tech.map((item, ind)=>{return(<li key={ind}>{item}</li>)})} 
                                 </ul>
                             </div>
                             <div className={styles.desc}>{item.description}</div>
-                            <div className={styles.toggleArrow}>
+                            {/* <div className={styles.toggleArrow}>
                                 <a target="_blank" href={item.link} id = 'link'><img src={rightArrow}/></a>
-                            </div>
+                            </div> */}
                         </li>
                     )
             })
         }
         <div className={styles.cursor} id='cursor'></div>
-        <div className={styles.subCursor} id='subCursor'>view</div>
+        {/* <div className={styles.subCursor} id='subCursor'>view</div> */}
+        <div className={styles.subCursor} id='subCursor'>
+            <img src={rightArrow} alt="" className={styles.subCursorArrowImage}/>
+        </div>
         <div style={{position: 'absolute', left: '-9999px', top: '-9999px', opacity: '0', visibility: 'hidden'}}>
             {props.items.map((item, ind)=>{
                 return(<div key={ind} style={{background: `url(${item.imageSrc[0]}) 0% 0% / contain`, width: '30vw', aspectRatio : '1'}}></div>)
